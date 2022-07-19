@@ -4,7 +4,7 @@ module railway-test-bot
 go 1.18
 
 require (
-	github.com/disgoorg/disgo v0.13.5
+	github.com/disgoorg/disgo v0.13.6-0.20220718233302-bba9a2ff2e31
 	github.com/disgoorg/log v1.2.0
 )
 
