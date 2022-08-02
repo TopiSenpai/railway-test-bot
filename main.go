@@ -19,16 +19,16 @@ var (
 
 	commands = []discord.ApplicationCommandCreate{
 		discord.SlashCommandCreate{
-			CommandName: "say",
+			Name:        "say",
 			Description: "says what you say",
 			Options: []discord.ApplicationCommandOption{
 				discord.ApplicationCommandOptionString{
-					OptionName:  "message",
+					Name:        "message",
 					Description: "What to say",
 					Required:    true,
 				},
 				discord.ApplicationCommandOptionBool{
-					OptionName:  "ephemeral",
+					Name:        "ephemeral",
 					Description: "If the response should only be visible to you",
 					Required:    true,
 				},
@@ -43,7 +43,7 @@ func main() {
 	log.Info("disgo version: ", disgo.Version)
 
 	gatewayLogger := log.New(log.LstdFlags | log.Lshortfile)
-	gatewayLogger.SetLevel(log.LevelTrace)
+	gatewayLogger.SetLevel(log.LevelDebug)
 
 	client, err := disgo.New(token,
 		bot.WithGatewayConfigOpts(gateway.WithLogger(gatewayLogger)),
